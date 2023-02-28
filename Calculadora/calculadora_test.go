@@ -3,7 +3,8 @@ package main
 import (
 	//"fmt"
 	"testing"
-	//"github.com/stretchr/testify/assert"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestSoma(t *testing.T) {
@@ -35,9 +36,10 @@ func TestMultriplicao(t *testing.T) {
 	for _, test := range tests {
 		total := multiplicacao(test.Valores)
 
-		if total != test.Resultado {
-			t.Fatalf("Multiplicação incorreta")
-		}
+		// if total != test.Resultado {
+		// 	t.Fatalf("Multiplicação incorreta")
+		// }
+		assert.Equal(t, test.Resultado, total)
 	}
 }
 
