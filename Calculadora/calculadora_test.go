@@ -1,7 +1,6 @@
 package main
 
 import (
-	//"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -48,5 +47,22 @@ func TestDivisao(t *testing.T) {
 
 	if test != 3.5 {
 		t.Fatalf("Divisão incorreta")
+	}
+}
+
+func TestEquacao1(t *testing.T) {
+	test := equacao1(2, 5)
+
+	if test != -2.5 {
+		t.Fatalf("Equação de primeiro grau incorreta")
+	}
+}
+
+func TestEquacao2(t *testing.T) {
+	test := equacao2(2, 4, -6)
+	resultado := []float64{1.0, -3.0}
+
+	if test[0] != resultado[0] || test[1] != resultado[1] {
+		t.Fatalf("Equação de segundo grau incorreta")
 	}
 }
